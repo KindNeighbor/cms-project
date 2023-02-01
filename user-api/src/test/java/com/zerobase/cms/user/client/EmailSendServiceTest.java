@@ -15,7 +15,7 @@ public class EmailSendServiceTest {
     public void EmailTest() {
         mailgunClient.sendEmail(SendMailForm.builder()
             .from("zerobase-test@gmail.com")
-            .to("zerosix1017@gmail.com")
+            .to("sis02064@daum.net")
             .text("메일 테스트")
             .subject("TEST")
             .build());
