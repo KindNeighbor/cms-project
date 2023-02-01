@@ -1,0 +1,84 @@
+
+### 회원가입 (고객)
+POST http://localhost:8080/signUp/customer
+Content-Type: application/json
+
+{
+  "birth": "2022-04-20",
+  "email": "sis02064@daum.net",
+  "name": "myname",
+  "password": "mypw",
+  "phone": "0101234"
+}
+
+### 이메일 인증 ( 고객)
+GET http://localhost:8080/signUp/customer/verify?email=sis02064@daum.net&code=bqsYotcmpv
+Content-Type: application/json
+
+### 로그인
+POST http://localhost:8080/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "sis02064@daum.net",
+  "password": "mypw"
+}
+
+<> 2022-04-21T000015.200.txt
+
+### 회원정보 조회
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6Ik1BNmNTMGR1b2RkYzZGTEdnVElZaXc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUyNDgxMDYsImV4cCI6MTY3NTMzNDUwNn0.mwZF2AmRGWzAvbT3wns76uWCiuTzHsmqqlOTGmu_ubE
+
+
+<> 2022-04-20T232659.200.json
+
+### 잔액변경
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6Ik1BNmNTMGR1b2RkYzZGTEdnVElZaXc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzUyNDgxMDYsImV4cCI6MTY3NTMzNDUwNn0.mwZF2AmRGWzAvbT3wns76uWCiuTzHsmqqlOTGmu_ubE
+
+{
+  "from": "admin",
+  "message": "test",
+  "money": 50000
+}
+
+### 회원가입 (셀러)
+POST http://localhost:8080/signUp/seller
+Content-Type: application/json
+
+{
+  "birth": "2022-04-20",
+  "email": "ewb.doohyun@gmail.com",
+  "name": "myname seller",
+  "password": "mypw",
+  "phone": "01047"
+}
+### 이메일 인증 ( 셀러 )
+PUT http://localhost:8080/signUp/seller/verify?email=ewb.doohyun@gmail.com&code=qpY6y7eBbx
+Content-Type: application/json
+
+### 로그인(셀러)
+POST http://localhost:8080/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "ewb.doohyun@gmail.com",
+  "password": "mypw"
+}
+
+<> 2022-04-20T230149.200.txt
+
+### 회원정보 조회
+GET http://localhost:8080/seller/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJRQ0lrZkJUZFJXazhoNEhIMFFNZU1nZzhUNTV1aTVkSlZxcFgwK29OVkNJPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NTA0NjMzMDgsImV4cCI6MTY1MDQ2NjkwOH0.97fcYo2TqdGEgHO7tCGgrZPrFVOfW-O49RFjtNtKJnY
+
+
+<> 2022-04-20T230306.200.json
+<> 2022-04-20T230225.404.json
+<> 2022-04-20T230157.404.json
+<> 2022-04-20T225700.200.json
+
