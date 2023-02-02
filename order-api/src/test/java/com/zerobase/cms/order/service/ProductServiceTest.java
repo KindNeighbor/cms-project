@@ -43,6 +43,23 @@ class ProductServiceTest {
         assertEquals(result.getProductItems().get(0).getCount(),1);
     }
 
+    @Test
+    @Transactional
+    void DELETE_PRODUCT_TEST() {
+        Long sellerId = 1L;
+
+        AddProductForm form = makeProductForm("코카콜라", "음료", 3);
+
+        Product p = productService.addProduct(sellerId, form);
+
+        productService.deleteProduct(sellerId, p.getId());
+
+        Product result = productRepository.findById(p.getId()).orElse(null);
+
+        assertEquals(p.getName(),"코카콜라");
+        assertNull(result);
+    }
+
     private static AddProductForm makeProductForm(String name, String description, int itemCount) {
         List<AddProductItemForm> itemForms = new ArrayList<>();
         for (int i = 0; i < itemCount; i++) {
