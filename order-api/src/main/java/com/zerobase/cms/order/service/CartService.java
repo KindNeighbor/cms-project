@@ -3,7 +3,6 @@ package com.zerobase.cms.order.service;
 import com.zerobase.cms.order.client.RedisClient;
 import com.zerobase.cms.order.domain.product.AddProductCartForm;
 import com.zerobase.cms.order.domain.redis.Cart;
-import com.zerobase.cms.order.domain.redis.Cart.Product;
 import com.zerobase.cms.order.domain.redis.Cart.ProductItem;
 import java.util.List;
 import java.util.Map;
