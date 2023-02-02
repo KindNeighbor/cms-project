@@ -61,11 +61,11 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3e
   "count": 10
 }
 
-### 상품 삭제 ( 셀러 )
+### 상품 삭제 ( 판매자 )
 DELETE http://localhost:8081/seller/product?id=1
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MjY0ODI3LCJleHAiOjE2NzUzNTEyMjd9.UGEzWE4N9pma2wq88ut_bRIwnTrC54FOlu7FIK9FC8c
 
-### 아이템 삭제 ( 셀러 )
+### 아이템 삭제 ( 판매자 )
 DELETE http://localhost:8081/seller/product/item?id=1
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MjY0ODI3LCJleHAiOjE2NzUzNTEyMjd9.UGEzWE4N9pma2wq88ut_bRIwnTrC54FOlu7FIK9FC8c
 
