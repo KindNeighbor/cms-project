@@ -1,21 +1,19 @@
 
-### for integration test
-
 ### 상품 등록
 POST http://localhost:8081/seller/product
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MjY0ODI3LCJleHAiOjE2NzUzNTEyMjd9.UGEzWE4N9pma2wq88ut_bRIwnTrC54FOlu7FIK9FC8c
 Content-Type: application/json
 
 {
-  "description": "상품입니다.",
+  "description": "컴퓨터.",
   "items": [
     {
       "count": 1,
-      "name": "아이템 1",
+      "name": "컴퓨터 1",
       "price": 10
     }
   ],
-  "name": "상품명"
+  "name": "컴퓨터"
 }
 
 ### 아이템 추가 등록
@@ -32,6 +30,37 @@ Content-Type: application/json
 
 <> 2022-04-20T232308.200.json
 
+### 상품 수정 ( 판매자 )
+PUT http://localhost:8081/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MjY0ODI3LCJleHAiOjE2NzUzNTEyMjd9.UGEzWE4N9pma2wq88ut_bRIwnTrC54FOlu7FIK9FC8c
+
+{
+  "description": "컴퓨터",
+  "items": [
+    {
+      "id": 28,
+      "name": "컴퓨터1",
+      "price": 20000,
+      "count": 8
+    }
+  ],
+  "id": 10,
+  "name" : "컴퓨터1"
+}
+
+### 아이템 수정 ( 판매자 )
+PUT http://localhost:8081/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhWlM2amFldldFcjNrcWkybHV4VGpxSFN3eDdOT21YTUtrREp0T2VGZU8wPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1MjY0ODI3LCJleHAiOjE2NzUzNTEyMjd9.UGEzWE4N9pma2wq88ut_bRIwnTrC54FOlu7FIK9FC8c
+
+{
+  "id" : 28,
+  "name": "펩시",
+  "price": 20000,
+  "count": 10
+}
+
 ### 상품 검색
 GET http://localhost:8081/search/product?name=상품
 Content-Type: application/json
@@ -42,10 +71,6 @@ Content-Type: application/json
 GET http://localhost:8081/search/product/detail?productId=1
 Content-Type: application/json
 
-### 업데이트와 삭제는 스스로 테스트 하고 디버그
-### 상품 업데이트
-### 아이템 업데이트
-### 상품 삭제
 
 ### (고객) 상품 확인
 GET http://localhost:8081/customer/cart
