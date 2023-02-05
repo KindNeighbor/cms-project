@@ -53,6 +53,32 @@ public class OrderApplication {
                 productItem.setCount(productItem.getCount()-cartItem.getCount());
             }
         }
+
+        SendMailForm mailForm = SendMailForm.builder()
+            .from("test@gmail.com")
+            .to(customerDto.getEmail())
+            .subject("주문내역입니다")
+            .text(getVerificationEmailBody(orderCart))
+            .build();
+        mailgunClient.sendEmail(mailForm);
+    }
+
+    private String getVerificationEmailBody(Cart cart) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("주문 내역입니다. \n\n");
+
+        for (Cart.Product product : cart.getProducts()) {
+            builder.append("상품명 : ").append(product.getName());
+            for (Cart.ProductItem cartItem : product.getItems()) {
+                builder.append("옵션 : ")
+                    .append(cartItem.getName())
+                    .append("가격 : ")
+                    .append(cartItem.getPrice()).append(" 원")
+                    .append("수량 : ")
+                    .append(cartItem.getCount()).append(" 개");
+            }
+        }
+        return builder.toString();
     }
 
     public Integer getTotalPrice(Cart cart) {
